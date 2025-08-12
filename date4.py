@@ -8,7 +8,7 @@ def detect_and_convert():
     month = int(input("Enter month (1-12): "))
     day = int(input("Enter day (1-31): "))
 
-    # Try as AD first
+    #  Try as AD first
     try:
         ad_candidate = datetime.date(year, month, day)
         bs_from_ad = nep_date.from_datetime_date(ad_candidate)
@@ -19,7 +19,7 @@ def detect_and_convert():
     except Exception:
         pass
 
-    # Try as BS next
+    #  Try as BS next
     try:
         bs_candidate = nep_date(year, month, day)
         ad_from_bs = bs_candidate.to_datetime_date()
